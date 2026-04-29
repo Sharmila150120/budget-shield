@@ -3,11 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-# This creates a local database file named database.db
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db = SQLAlchemy(app)
 
-# Database Model: How our data looks
+
 class Expense(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     item = db.Column(db.String(100), nullable=False)
